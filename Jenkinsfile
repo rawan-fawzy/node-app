@@ -36,9 +36,7 @@ pipeline {
  
         stage('Deploy to K8s') {
             steps {
-                sh '''
-                kubectl set image deployment/node-app node-app=$IMAGE_NAME:$TAG
-                '''
+                sh "kubectl set image deployment/node-app node-app=${IMAGE_NAME}:${TAG} --insecure-skip-tls-verify=true"
             }
         }
     }
