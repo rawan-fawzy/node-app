@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        IMAGE_NAME = "rawan-fawzy/node-app"
+        IMAGE_NAME = "rawanfawzy05/node-app"
         TAG = "${BUILD_NUMBER}"
     }
     stages {
