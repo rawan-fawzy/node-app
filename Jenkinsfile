@@ -1,11 +1,14 @@
 pipeline {
     agent any
- 
+    
+    tools {
+        dockerTool 'docker'  
+    }
+    
     environment {
-    IMAGE_NAME = "rawan_fawzy/node-app"
-    TAG = "${BUILD_NUMBER}"
-}
- 
+        IMAGE_NAME = "rawan-fawzy/node-app"
+        TAG = "${BUILD_NUMBER}"
+    }
     stages {
  
         stage('Checkout') {
