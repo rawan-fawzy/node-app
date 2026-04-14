@@ -12,8 +12,15 @@ spec:
       labels:
         app: node-app
     spec:
-  containers:
-  - name: node-app
-    image: rawan_fawzy/node-app:latest  # تأكدي من تحديث الصورة إلى أحدث إصدار
-    ports:
-    - containerPort: 3000
+      containers: # لازم تكون تحت spec بمسافتين بالظبط
+      - name: node-app
+        image: rawan_fawzy/node-app:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
