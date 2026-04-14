@@ -14,7 +14,7 @@ spec:
     spec:
       containers: # لازم تكون تحت spec بمسافتين بالظبط
       - name: node-app
-        image: rawan_fawzy/node-app:latest
+        image: node:18-alpine #rawan_fawzy/node-app:latest
         ports:
         - containerPort: 3000
         resources:
